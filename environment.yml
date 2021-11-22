@@ -22,10 +22,14 @@ dependencies:
   - Sphinx==1.8.1
   - twine==1.12.1
   - jupyter
-  - jupyter_nbextensions_configurator
-  - jupyter_contrib_nbextensions
+  - fastapi==0.68.1
+#  - jupyter_nbextensions_configurator
+#  - jupyter_contrib_nbextensions
   - pip:
     - sphinx_rtd_theme
     - loguru
     - click
+    - python-multipart
+    - pytest==6.2.4
+    - uvloop==0.16.0
 #    - git+https://github.com/blaze/dask.git#egg=dask[complete]

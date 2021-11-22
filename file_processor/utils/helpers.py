@@ -53,7 +53,13 @@ def filter_json_date(file_path, start_datetime, end_datetime):
         logger.info('Loading the file')
         # df = pd.read_csv(StringIO(str(file_path.read(), 'utf-16')), encoding='utf-16')
         # logger.info(df.head())
-        df = pd.read_csv(file_path, sep=" ", header=None)
+        # df = pd.read_csv(file_path, sep=" ", header=None)
+        # For larger file, we can use Chunks
+        chunks = pd.read_csv(file_path, sep=" ", header=None, chunksize=1000000)
+        df = pd.concat(chunks)
+
+        # Using Multiprocessing to reading Chunks
+
         # logger.info(df.head())
         df.columns = ['eventTime', 'email', 'sessionId']
         logger.info('filtering the data')
