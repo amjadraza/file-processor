@@ -39,6 +39,8 @@ Activate the environment
 ``conda activate ./venv``
 
 
+
+
 Features
 --------
 This package is to read the text files using API.
@@ -63,6 +65,22 @@ To set up the local development server using `FASTAPI` server
 
 ``uvicorn file_processor.API.main:app --reload``
 
+Go to below link to test the App using `Docs`
+
+```http://127.0.0.1:8000/docs```
+
+To test the App using Postman, follow below link
+
+```http://127.0.0.1:8000/process_file/```
+
+Run Auto Tests
+--------------------
+We can run auto test of the functions for backend
+
+use below commands
+
+``python -m pytest tests/test_file_processor.py``
+
 
 Run App using Docker
 --------------------
@@ -80,11 +98,21 @@ Run the docker container using docker-compose
 
 ``docker-compose up``
 
+Create Docs
+------------
+The documentation using Sphnix is already set it up.
+
+Use below command to build from `.docs/` location
+
+``make html``
+
 TODO
 ----
 * Streaming the text file
 * Using Spark Streaming to read/process/store the files
 * Load Balancer
+* Host Docs
+* Set up CI/CD
 
 
 Credits

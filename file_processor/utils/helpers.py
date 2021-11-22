@@ -8,6 +8,7 @@ This module contains helpers functions
 Todo:
     * Add more helper functions
 """
+
 import sys
 sys.path.append('.')
 import pandas as pd
@@ -16,6 +17,7 @@ import re
 
 regex = r'^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]Z)?$'
 match_iso8601 = re.compile(regex).match
+
 
 def validate_iso8601_utc(str_val):
     """
@@ -46,7 +48,6 @@ def filter_json_date(file_path, start_datetime, end_datetime):
     Returns: Json Object
 
     """
-
     if validate_iso8601_utc(start_datetime) & validate_iso8601_utc(end_datetime):
         logger.info('Date Time formats are correct')
         logger.info('Loading the file')

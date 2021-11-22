@@ -9,7 +9,6 @@ Example
 
     >>> uvicorn file_processor.API.main:app --reload
 
-
 Todo:
     * Add more details/functionalities
     * Convert the Simple API into production ready API
@@ -73,6 +72,7 @@ async def create_upload_file(
                                                   title="End datetime UTC Format",
                                                   ),
                              uploaded_file: UploadFile = File(...)):
+
     """
     API end point to run the filter. Users can upload the text file and datetime ranges t filter
     Args:
@@ -81,7 +81,6 @@ async def create_upload_file(
         uploaded_file: text File
 
     Returns: Json format response
-
     """
 
     file_location = f"{FILES_DATA_DIR}/{uploaded_file.filename}"

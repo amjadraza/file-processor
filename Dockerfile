@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 COPY ./file_processor /app/file_processor
 
-CMD ["uvicorn", "file_processor.API.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "file_processor.API.main:app", "--host", "0.0.0.0", "--port", "8000"]
