@@ -1,0 +1,31 @@
+name: file_processor
+
+channels:
+- r
+- conda-forge
+- defaults
+dependencies:
+  - python>=3.7
+  - numpy
+  - toolz
+  - matplotlib
+  - dill
+  - pandas==1.3.4
+  - partd
+  - pip==18.1
+#  - bumpversion
+  - wheel==0.32.1
+#  - watchdog
+  - flake8==3.5.0
+#  - tox
+  - coverage==4.5.1
+  - Sphinx==1.8.1
+  - twine==1.12.1
+  - jupyter
+  - jupyter_nbextensions_configurator
+  - jupyter_contrib_nbextensions
+  - pip:
+    - sphinx_rtd_theme
+    - loguru
+    - click
+#    - git+https://github.com/blaze/dask.git#egg=dask[complete]

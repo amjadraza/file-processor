@@ -1,0 +1,10 @@
+version: '3'
+services:
+  file_processor:
+    image: fileprocessor
+    build: ./app
+    command: uvicorn file_processor.API.main:app --reload --host 0.0.0.0 --port 8000
+    volumes:
+      - ./file_processor/:/app/file_processor
+    ports:
+      - 8001:8000
